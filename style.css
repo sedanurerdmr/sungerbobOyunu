@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding: 0;
+
+}
+
+body{
+    background-color: #000;
+}
+
+#oyun{
+    width:800px ;
+    height: 200px;
+    border: 1px solid #000;
+    background: #fff;
+    margin: 100px auto;
+    position: relative;
+    overflow: hidden; /*animasyonun taşmasını engellemek için*/
+}
+
+#sungerbob{
+    position: absolute; /*position absolute olması için ana kapsayıcıya position rlative vermelisin*/
+    width: 34px;
+    height: 50px;
+    background: url(sb.png);
+    bottom: 0; /*bottom 0 verebilmek için position absolute yapmalıyız*/
+    
+}
+
+.sungerbob-animate{
+    animation: sungerbob 0.5s linear;
+}
+
+#plankton{
+    position: absolute;
+    width: 37px;
+    height: 46px;
+    background: url(pl.jpg);
+    bottom: 0;
+    left: 760px;
+    
+}
+
+.plankton-animate{  /**/
+    animation: plankton 2s linear infinite;
+}
+
+/*PLANKTONUN SOLDAN SAĞA DOĞRU HAREKETİ*/
+
+@keyframes plankton{
+    0%{left: 760px;}
+    100%{left: -30px;}
+}
+
+@keyframes sungerbob{
+    0%{bottom: 0px;}
+    25%{bottom:75px;}
+    75%{bottom: 75px;}
+    100%{bottom: 0px;}
+}
